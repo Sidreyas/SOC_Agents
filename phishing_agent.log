@@ -1,0 +1,4 @@
+2025-06-16 10:37:05,936 INFO: [Email Ingest] Extracted email: URGENT: Please review invoice from sender attacker@example.com
+2025-06-16 10:37:05,937 INFO: [Escalation] Email ID email-001 marked as PHISHING and escalated to L2.
+2025-06-18 09:41:37,986 INFO: [Email Ingest] Extracted email: URGENT: Please review invoice from sender attacker@example.com
+2025-06-18 09:41:37,986 INFO: [Escalation] Email ID email-001 marked as PHISHING and escalated to L2.
