@@ -1,0 +1,69 @@
+[
+  {
+    "email": {
+      "id": "email-101",
+      "subject": "Your Invoice is Ready",
+      "sender": "attacker@scam.com",
+      "body": "Please see the attached invoice.",
+      "raw_headers": "SPF=fail",
+      "attachments": [
+        {
+          "filename": "invoice.zip"
+        }
+      ],
+      "links": "http://phish-now.com"
+    }
+  },
+  {
+    "email": {
+      "id": "email-102",
+      "subject": "Weekly Standup Agenda",
+      "sender": "lead@trustedcorp.com",
+      "body": "Let’s meet at 10AM.",
+      "raw_headers": "SPF=pass",
+      "attachments": [
+        {
+          "filename": "agenda.pdf"
+        }
+      ],
+      "links": "https://intranet.trustedcorp.com"
+    }
+  },
+  {
+    "email": {
+      "id": "email-103",
+      "subject": "Verify your account",
+      "sender": "security@update-center.com",
+      "body": "Click here to secure your account.",
+      "raw_headers": "SPF=fail",
+      "attachments": [],
+      "links": "http://fake-update.net"
+    }
+  },
+  {
+    "email": {
+      "id": "email-104",
+      "subject": "Team Lunch Reminder",
+      "sender": "hr@trustedcorp.com",
+      "body": "Lunch at 1 PM in cafeteria.",
+      "raw_headers": "SPF=pass",
+      "attachments": [],
+      "links": "https://slack.com"
+    }
+  },
+  {
+    "email": {
+      "id": "email-105",
+      "subject": "URGENT: Payment Required",
+      "sender": "support@paypal-alerts.com",
+      "body": "Your payment is pending, login now.",
+      "raw_headers": "SPF=softfail",
+      "attachments": [
+        {
+          "filename": "invoice.html"
+        }
+      ],
+      "links": "http://fake-paypal.com"
+    }
+  }
+]

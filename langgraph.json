@@ -1,0 +1,7 @@
+{
+    "dependencies": ["."],
+    "env": "../.env",
+    "graphs": {
+        "phishing_graph": "phishing_graph:phishing_email_graph"
+    }
+}
