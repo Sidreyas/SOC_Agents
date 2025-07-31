@@ -4,6 +4,9 @@
 4_agents.txt
 5_agents.txt
 
+# Workflow documentation (local only)
+workflow_docs/
+
 # Python cache
 __pycache__/
 *.pyc
