@@ -1,1 +1,22 @@
 .env
+
+# Specification files (local only)
+4_agents.txt
+5_agents.txt
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

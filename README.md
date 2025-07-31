@@ -21,16 +21,16 @@ SOC_Agents/
 │   ├── compliance.py          # Compliance & Regulatory Framework
 │   ├── scaling.py             # Scaling & Performance Management
 │   └── operations.py          # Operations & Monitoring
-├── agents/                     # Core SOC Agents
-│   ├── phishing_agent/         # Email Phishing Detection
+├── agents/                     # Core SOC Agents (9 Enterprise Agents)
+│   ├── access_control_agent/   # Access Control & Permission Analysis
+│   ├── ddos_defense_agent/     # DDoS Attack Detection & Mitigation
+│   ├── host_stability_agent/   # Host Stability & Endpoint Security
+│   ├── insider_behavior_agent/ # Insider Threat Detection
 │   ├── login_identity_agent/   # Identity & Access Management
-│   ├── powershell_agent/       # PowerShell Analysis
 │   ├── malware_agent/          # Malware Detection & Analysis
-│   ├── network_agent/          # Network Traffic Analysis
-│   ├── endpoint_agent/         # Endpoint Detection & Response
-│   ├── threat_intelligence_agent/ # Threat Intelligence Correlation
-│   ├── incident_response_agent/   # Incident Response Coordination
-│   └── vulnerability_agent/    # Vulnerability Assessment
+│   ├── network_agent/          # Network Traffic Analysis & Exfiltration Detection
+│   ├── phishing_agent/         # Email Phishing Detection
+│   └── powershell_agent/       # PowerShell Script Analysis & Exploitation Detection
 ├── orchestrator/               # Master Orchestration System
 ├── api/                       # REST API Interface
 ├── common/                    # Shared Utilities
@@ -39,59 +39,59 @@ SOC_Agents/
 
 ## 🔧 SOC Agents Overview
 
-### 1. **Phishing Agent** 🎣
-Advanced email threat detection with machine learning classification
-- **Capabilities**: Email parsing, link analysis, attachment scanning, ML classification
-- **Enterprise Features**: RBAC, audit logging, SLA tracking, automated response
-- **Location**: `agents/phishing_agent/enterprise_main.py`
+### 1. **Access Control Agent** 🔐
+Advanced access control and permission analysis for security compliance
+- **Capabilities**: Permission analysis, access validation, baseline comparison, risk assessment
+- **Enterprise Features**: RBAC integration, compliance reporting, automated alerts
+- **Location**: `agents/access_control_agent/enterprise_main.py`
 
-### 2. **Login Identity Agent** 🔐
+### 2. **DDoS Defense Agent** �️
+Comprehensive DDoS attack detection, analysis, and mitigation
+- **Capabilities**: Traffic pattern analysis, attack vector classification, mitigation strategies
+- **Enterprise Features**: Real-time monitoring, automated response, threat attribution
+- **Location**: `agents/ddos_defense_agent/enterprise_main.py`
+
+### 3. **Host Stability Agent** �️
+Host stability monitoring and endpoint security analysis
+- **Capabilities**: Endpoint pattern analysis, stability correlation, threat classification
+- **Enterprise Features**: Health monitoring, automated remediation, compliance tracking
+- **Location**: `agents/host_stability_agent/enterprise_main.py`
+
+### 4. **Insider Behavior Agent** 👤
+Advanced insider threat detection and behavioral analysis
+- **Capabilities**: Behavioral profiling, anomaly detection, risk correlation
+- **Enterprise Features**: Privacy compliance, automated alerting, investigation support
+- **Location**: `agents/insider_behavior_agent/enterprise_main.py`
+
+### 5. **Login Identity Agent** 🔑
 Comprehensive identity and access management security
-- **Capabilities**: Authentication analysis, credential monitoring, behavioral profiling
+- **Capabilities**: Authentication analysis, credential monitoring, geographic analysis
 - **Enterprise Features**: Compliance reporting, automated alerting, threat correlation
 - **Location**: `agents/login_identity_agent/enterprise_main.py`
 
-### 3. **PowerShell Agent** 💻
-Advanced PowerShell script analysis and threat detection
-- **Capabilities**: Script decoding, behavioral analysis, MITRE ATT&CK mapping
-- **Enterprise Features**: Forensic collection, automated containment, compliance reporting
-- **Location**: `agents/powershell_agent/enterprise_main.py`
-
-### 4. **Malware Agent** 🦠
-Comprehensive malware detection and analysis
-- **Capabilities**: File analysis, signature detection, behavioral analysis, sandbox integration
-- **Enterprise Features**: Threat intelligence correlation, automated remediation, SLA management
+### 6. **Malware Agent** 🦠
+Advanced malware detection, analysis, and threat intelligence correlation
+- **Capabilities**: File hash analysis, behavioral analysis, C2 detection, attribution analysis
+- **Enterprise Features**: Threat intelligence integration, automated containment, forensic analysis
 - **Location**: `agents/malware_agent/enterprise_main.py`
 
-### 5. **Network Agent** 🌐
-Advanced network traffic analysis and intrusion detection
-- **Capabilities**: Traffic analysis, anomaly detection, protocol analysis, geolocation
-- **Enterprise Features**: Real-time monitoring, automated blocking, compliance logging
+### 7. **Network Agent** 🌐
+Network traffic analysis and data exfiltration detection
+- **Capabilities**: Traffic analysis, exfiltration detection, lateral movement detection, C2 analysis
+- **Enterprise Features**: Real-time monitoring, automated blocking, threat intelligence correlation
 - **Location**: `agents/network_agent/enterprise_main.py`
 
-### 6. **Endpoint Agent** 🖥️
-Comprehensive endpoint detection and response
-- **Capabilities**: Process monitoring, behavioral analysis, forensic collection
-- **Enterprise Features**: Automated isolation, evidence collection, compliance reporting
-- **Location**: `agents/endpoint_agent/enterprise_main.py`
+### 8. **Phishing Agent** 🎣
+Advanced email threat detection with machine learning classification
+- **Capabilities**: Email parsing, URL analysis, attachment scanning, sender reputation analysis
+- **Enterprise Features**: RBAC, audit logging, SLA tracking, automated response
+- **Location**: `agents/phishing_agent/enterprise_main.py`
 
-### 7. **Threat Intelligence Agent** 🕵️
-Advanced threat intelligence analysis and correlation
-- **Capabilities**: IOC enrichment, attribution analysis, campaign correlation
-- **Enterprise Features**: Predictive analytics, automated blocking, threat hunting
-- **Location**: `agents/threat_intelligence_agent/enterprise_main.py`
-
-### 8. **Incident Response Agent** 🚨
-Automated incident response coordination and management
-- **Capabilities**: Incident classification, response orchestration, evidence collection
-- **Enterprise Features**: Compliance reporting, automated workflows, SLA tracking
-- **Location**: `agents/incident_response_agent/enterprise_main.py`
-
-### 9. **Vulnerability Agent** 🔍
-Comprehensive vulnerability assessment and management
-- **Capabilities**: Vulnerability scanning, risk assessment, remediation planning
-- **Enterprise Features**: Compliance analysis, automated patching, trend analysis
-- **Location**: `agents/vulnerability_agent/enterprise_main.py`
+### 9. **PowerShell Agent** �
+PowerShell script analysis and exploitation detection
+- **Capabilities**: Script content analysis, command pattern matching, behavioral analysis, exploit correlation
+- **Enterprise Features**: Forensic collection, automated containment, compliance reporting
+- **Location**: `agents/powershell_agent/enterprise_main.py`
 
 ## 🏗️ Enterprise Infrastructure
 
@@ -159,6 +159,18 @@ phishing_agent = await factory.create_agent("phishing")
 
 # Analyze email
 results = await phishing_agent.analyze_email(email_data)
+
+# Deploy network agent for traffic analysis
+network_agent = await factory.create_agent("network")
+
+# Analyze network threat
+network_results = await network_agent.analyze_network_threat(traffic_data)
+
+# Deploy malware agent
+malware_agent = await factory.create_agent("malware")
+
+# Analyze suspicious file
+malware_results = await malware_agent.analyze_malware_sample(file_data)
 ```
 
 ## 📊 Monitoring & Operations
@@ -207,9 +219,14 @@ Each agent supports extensive configuration through environment variables and co
 
 ### Throughput Capabilities
 - **Phishing Analysis**: 1,000+ emails/minute
-- **Network Analysis**: 10GB+ traffic/minute
+- **Network Analysis**: 10GB+ traffic/minute  
 - **Malware Analysis**: 500+ files/minute
-- **Vulnerability Scanning**: 10,000+ endpoints/hour
+- **DDoS Detection**: Real-time traffic analysis
+- **Access Control**: 10,000+ permission checks/minute
+- **Host Stability**: Continuous endpoint monitoring
+- **Insider Behavior**: Real-time behavioral analysis
+- **PowerShell Analysis**: 1,000+ scripts/minute
+- **Login Identity**: Real-time authentication monitoring
 
 ### Scaling Features
 - Horizontal scaling across multiple nodes
@@ -274,9 +291,12 @@ class EnterpriseAgent:
 ## 📞 Support & Documentation
 
 ### Documentation
-- [Enterprise Deployment Guide](ENTERPRISE_DEPLOYMENT_GUIDE.md)
-- [Implementation Summary](IMPLEMENTATION_SUMMARY.md)
-- [Master Orchestrator](MASTER_ORCHESTRATOR_README.md)
+- [Enterprise Deployment Guide](docs/ENTERPRISE_DEPLOYMENT_GUIDE.md)
+- [Implementation Summary](docs/IMPLEMENTATION_SUMMARY.md)
+- [Master Orchestrator](docs/MASTER_ORCHESTRATOR_README.md)
+- [Phishing Agent Guide](docs/PHISHING_AGENT_README.md)
+- [PowerShell Agent Implementation](docs/PowerShell_Agent_Implementation_Complete.md)
+- [Enterprise Upgrade Plan](docs/enterprise_upgrade_plan.md)
 
 ### Support
 - Enterprise support available
