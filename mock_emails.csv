@@ -1,6 +1,0 @@
-id,subject,sender,body,raw_headers,attachments,links
-email-101,Your Invoice is Ready,attacker@scam.com,"Please see the attached invoice.","SPF=fail",invoice.zip,http://phish-now.com
-email-102,Weekly Standup Agenda,lead@trustedcorp.com,"Let’s meet at 10AM.","SPF=pass",agenda.pdf,https://intranet.trustedcorp.com
-email-103,Verify your account,security@update-center.com,"Click here to secure your account.","SPF=fail",,"http://fake-update.net"
-email-104,Team Lunch Reminder,hr@trustedcorp.com,"Lunch at 1 PM in cafeteria.","SPF=pass",none,https://slack.com
-email-105,URGENT: Payment Required,support@paypal-alerts.com,"Your payment is pending, login now.","SPF=softfail",invoice.html,http://fake-paypal.com
